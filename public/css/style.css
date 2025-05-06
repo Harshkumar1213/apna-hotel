@@ -1,0 +1,147 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+/* navbar */
+.navbar{
+    height: 4rem;
+}
+
+.navbar .fa-compass{
+    color: rgb(103, 188, 244);
+}
+
+.input{
+    border-radius: 2.5rem;
+    width: 25rem;
+}
+
+.btn-outline-info{
+    border-radius: 2.5rem;
+}
+.btn-outline-info i{
+    display: inline;
+    margin-left: 0.5rem;
+}
+
+
+/* icons */
+#filters{
+    display: flex;
+    gap: 2.4rem;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.filter:hover{
+    color: #848484;
+}
+
+/* tax btn */
+.tax-info{
+    display: none;
+}
+
+.tax-toggle{
+    border: 1px solid;
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 0.8rem;
+}
+
+.fil{
+    text-align: center;
+    border: 1px solid;
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 0.8rem;
+}
+
+
+/* footer */
+.border-top{
+    background-color: #f8f6f6;
+}
+.f-info{
+    height: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.f-info-socials,
+.f-info-links,
+.f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+/* card */
+.listingCard{ 
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.card a{
+    text-decoration: none;
+    color: #222222;
+}
+
+/* img hover */
+.show-img{
+    height: 35vh;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: #fff
+}
+
+/* btns */
+.btns{
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.previwImg{
+    width: 200px;
+}
+
+/* map */
+#map { 
+    width: 200px;
+}

@@ -1,0 +1,112 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <h3>Create a New Listings</h3>
+      <form
+        method="post"
+        action="/listings"
+        class="needs-validation"
+        enctype="multipart/form-data"
+        novalidate
+      >
+        <div class="mb-1">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="listing[title]"
+            id="title"
+            required
+          />
+          <div class="valid-feedback">
+            Title Looks good!
+          </div>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            Please Fill Title.
+          </div>
+        </div>
+        <div class="mb-1">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            required
+            type="text"
+            class="form-control"
+            name="listing[description]"
+            id="description"
+          ></textarea>
+          <div class="valid-feedback">
+            Description Looks good!
+          </div>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            Please Fill Description
+          </div>
+        </div>
+        <div class="mb-1">
+          <label for="image" class="form-label">Uplode-image</label>
+          <input
+            type="file"
+            class="form-control"
+            name="listing[image]"
+            required
+            id="image"
+          />
+          <div class="valid-feedback">
+            Uplode-image good!
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-1 col-5">
+            <label for="price" class="form-label">Price</label>
+            <input
+              required
+              type="number"
+              class="form-control"
+              name="listing[price]"
+              id="price"
+            />
+            <div class="valid-feedback">
+              Validat Price Enter
+            </div>
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              inValidat Price Enter
+            </div>
+          </div>
+          <div class="mb-1 col-7">
+            <label for="country" class="form-label">Country</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              name="listing[country]"
+              id="country"
+            />
+            <div class="valid-feedback">
+              Validat Country Name
+            </div>
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              inValidat Country Enter
+            </div>
+          </div>
+        </div>
+        <div class="mb-1">
+          <label for="location" class="form-label">Location</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            name="listing[location]"
+            id="location"
+          />
+          <div class="valid-feedback">
+            Validat Location Name
+          </div>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            inValidat Location Enter
+          </div>
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button><br /><br />
+      </form>
+    </div>
+  </div>
+</body>

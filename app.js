@@ -12,12 +12,12 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const listingsRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
+const userRouter = require("./routes/user.js");
 const flash = require("connect-flash")
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const passport = require("passport");
 const localStrategy = require("passport-local");
-const userRouter = require("./routes/user.js");
 const User = require("./models/user.js");
 const dbURL = process.env.ATLAS_URL;
 

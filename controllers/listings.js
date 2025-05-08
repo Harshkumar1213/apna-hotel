@@ -3,7 +3,6 @@ const Listing = require("../models/listing");
 
 module.exports.index = async (req, res) => {
     let allData = await Listing.find();
-    console.log(res.locals.currUser.username)
     res.render("listing/home.ejs", { allData });
   };
 

@@ -40,4 +40,5 @@ router.get(
   "/:id/edit",
   inLoggedIn,isOwner,wrapAsync(listingController.editUpdate));
 
+
 module.exports = router;

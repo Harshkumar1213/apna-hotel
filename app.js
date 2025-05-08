@@ -79,14 +79,9 @@ app.listen(8080, () => {
   console.log("app listeing, 8080");
 });
 
-app.get("/",(req,res)=>{
-  res.send("working ON")
-})
-
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
-
 
 //Universal route
 // app.get("*",(req,res,next)=>{

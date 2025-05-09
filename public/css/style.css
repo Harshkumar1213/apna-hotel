@@ -133,6 +133,16 @@ body{
     text-decoration: underline;
 }
 
+/* show img */
+.card{
+    border: none !important;
+}
+.show-img{
+    border-radius: 15px;
+    height: 30vh;
+    object-fit: cover;
+}
+
 /* listing-card */
 .listings-grid {
     display: grid;

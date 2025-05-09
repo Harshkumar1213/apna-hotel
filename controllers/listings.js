@@ -8,7 +8,7 @@ module.exports.index = async (req, res) => {
 
 module.exports.renderNewForm = (req, res) => {
     res.render("listing/newListing.ejs");
-  };
+  }; 
 
 module.exports.newCreate = async (req, res, next) => {
     let url = req.file.path;

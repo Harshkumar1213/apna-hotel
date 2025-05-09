@@ -81,10 +81,10 @@ app.listen(8080, () => {
 });
 
 app.get('/', (req, res) => {
-  res.send("WELCOME TO APNA HOTEL :)");
+  res.send(home);
 })
 
-app.use("/listings", listingsRouter);
+let home = app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 

@@ -1,53 +1,338 @@
 body{
     display: flex;
     flex-direction: column;
-    min-width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    /* font-family: 'Helvetica Neue', Arial, sans-serif !important; */
 }
 
 .container{
     flex: 1 !important;
 }
 
-/* navbar */
-.navbar{
-    height: 4rem;
+/* Navbar container */
+.navbar {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* Left: Airbnb logo (text) */
+.logo a{
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: rgb(103, 188, 244);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
 }
 
-.navbar .fa-compass{
-    color: rgb(103, 188, 244);
+.barger-options{
+ display: flex;
+ justify-content: space-between;
+ gap: 15rem;
 }
 
-.input{
-    border-radius: 2.5rem;
-    width: 25rem;
+ /* Center: Search Bar */
+ .search-bar {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 24px;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #ddd;
+  border-radius: 32px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.search-bar:hover,
+.search-bar:focus-within {
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.15);
+  border-color: rgb(103, 188, 244);
 }
 
-.btn-outline-info{
-    border-radius: 2.5rem;
+.search-section {
+  flex: 1;
+  padding: 14px 24px;
+  border-right: 1px solid #ddd;
+  font-size: 14px;
+  color: #222;
 }
-.btn-outline-info i{
-    display: inline;
-    margin-left: 0.5rem;
+.search-section:last-child {
+  border-right: none;
+}
+.search-section span {
+  display: block;
+  font-weight: 600;
+  user-select: none;
+}
+.search-section small {
+  display: block;
+  font-weight: 400;
+  color: #717171;
+  font-size: 11px;
+  user-select: none;
 }
 
-/* icons */
+.search-icon {
+  background: rgb(103, 188, 244);
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-left: 12px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Right: User and globe menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.add a{
+  text-decoration: none;
+  color: #717171;
+}
+
+.menu button,
+.menu .user-menu {
+  cursor: pointer;
+  border: 1.5px solid #ddd;
+  background: white;
+  border-radius: 21px;
+  color: #717171;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.no-user{
+  position: absolute;
+  top: 80px;
+  right: 1px;
+  background-color: transparent;
+  height: 20vh;
+  width: 10vw;
+  display: none;
+}
+
+.no-userrr{
+  display: block;
+}
+
+ .no-user a{
+  margin-top: 1rem;
+  color: #222222;
+  display: flex;
+  line-height: 0.5rem;
+  text-decoration: none;
+  margin-left: 1rem; 
+}
+
+#user-bbtn{
+  cursor: pointer;
+  border: 1.5px solid #ddd;
+  background: white;
+  border-radius: 21px;
+  color: #717171;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.menu button:hover,
+.menu .user-menu:hover {
+  border-color: #bbbaba;
+  color: #bbbaba;
+  background-color: #eeeded;
+}
+.menu button svg,
+.menu .user-menu svg {
+  width: 20px;
+  height: 20px;
+}
+
+.barger-menu{
+  display: none;
+}
+
+
+ /* Hide text on smaller screen for user menu */
+ .user-menu span {
+  white-space: nowrap;
+}
+/* Responsive styles */
+@media (max-width: 1280px) {
+  .search-bar {
+    max-width: 500px;
+    margin: 0 16px;
+  }
+ 
+  .menu button,
+  .menu .user-menu {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 870px) {
+  .navbar {
+    padding: 0 16px;
+    height: 60px;
+  }
+  .search-bar {
+    width: 100%;
+    height: 50px;
+    margin: 0 12px;
+  }
+  .search-section {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+  .menu button,
+  .menu .user-menu {
+    padding: 5px 10px;
+    font-size: 13px;
+    gap: 6px;
+  }
+  .user-menu span {
+    display: none;
+  }
+}
+
+@media (max-width: 770px) {
+  .search-section{
+    font-size: 12px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile: Stack search sections vertically */
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .barger-menu{
+    display: block;
+  }
+
+  .barger-menu i{
+    font-size: 1.5rem;
+  }
+
+  .barger-options{
+    position: absolute;
+    top: 4.1rem;
+    background-color: transparent;
+    height: 6.5rem;
+    width: 28rem;
+    display: none;
+  }
+
+  .barger-op{
+    display: block;
+  }
+
+  .search-bar {
+    width: 100%;
+    display: flex;
+    margin: 2px 0 !important;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 24px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+  }
+
+  .search-section {
+    flex: 1 1 100%;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px !important;
+  }
+  .search-section:last-child {
+    border-bottom: none;
+  }
+  .search-icon {
+    width: 36px;
+    height: 36px;
+    margin: 12px auto 12px auto;
+    border-radius: 50%;
+  }
+  .menu {
+    flex-basis: 100%;
+    margin-top: 0.7rem;
+    justify-content: flex-start;
+  }
+
+  .menu button,
+    .menu .user-menu {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+    /* Keep user menu icon visible with no text */
+    .user-menu span {
+      display: none;
+    }
+
+  .filters{
+    
+  }
+    
+  }
+
+  @media (max-width: 450px) {
+    .logo {
+      font-size: 1.4rem;
+    }
+    .search-section {
+      font-size: 13px !important;
+      padding: 8px 12px ;
+    }
+    .menu button,
+    .menu .user-menu {
+      padding: 5px 8px;
+      font-size: 13px;
+    }
+  }
+
+/*filter and tax btn  */
 #filters{
     display: flex;
     width: 100%;
     gap: 2.3rem;
     text-align: center;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
 }
 
-.btn-secondary{
-    width: 5rem;
-    background-color: #f8f6f6;
-    color: #848484;
-    border-radius: 15px !important;
-}
-
-/* tax btn */
+/*btn for hide tax */
 .tax-info{
     display: none;
 }
@@ -60,7 +345,7 @@ body{
     border-radius: 9999px;
     padding: 10px 18px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     color: #222222;
     cursor: pointer;
     box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
@@ -131,16 +416,6 @@ body{
 
 .f-info-links a:hover{
     text-decoration: underline;
-}
-
-/* show img */
-.card{
-    border: none !important;
-}
-.show-img{
-    border-radius: 15px;
-    height: 30vh;
-    object-fit: cover;
 }
 
 /* listing-card */
@@ -256,17 +531,27 @@ body{
     }
   }
 
-/* btns */
+/* btns for show  */
 .btns{
     display: flex;
     align-items: flex-start;
     gap: 2rem;
 }
 
+/* show img */
+.card{
+  border: none !important;
+}
+.show-img{
+  border-radius: 15px;
+  height: 30vh;
+  object-fit: cover;
+}
+
 
 /* filters icon */
 .slider{
-    width: 66%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -388,54 +673,3 @@ body{
       font-size: 11px;
     }
   }
-
-/* css */
-@media only screen and (max-width:1285.59px) {
-    #filters .heid{
-        display: none;
-    }
-
-    .tax-toggle{
-    border: 1px solid;
-    line-height: 1rem;
-    border-radius: 1rem;
-    font-size: 0.8rem;
-    height: 3.5rem;
-    width: 6.5rem;
-    padding: 0.2rem 0.4rem;
-}
-.tax-toggle .form-switch{
-    text-align: center;
-}
-
-.fil{
-    border: 1px solid;
-    border-radius: 1rem;
-    line-height: 1rem;
-    font-size: 0.8rem;
-    height: 3.5rem;
-    width: 6.5rem;
-    padding: 0.2rem 0.4rem;
-}
-
-.fil .form-switch{
-    text-align: center;
-    margin-top: 0.4rem;
-}
-  }
-
-@media only screen and (max-width:991.20px) {
-    .collapse .search form{
-        width: 5rem;
-    }
-    .collapse .dropstart{
-        margin-top: 0.5rem;
-        margin-right: 55rem;
-        width:6rem;
-    }
-  }
-
-
-
-
-

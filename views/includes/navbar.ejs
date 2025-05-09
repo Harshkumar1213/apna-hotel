@@ -1,49 +1,75 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass fs-1"></i></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link fs-5 fst-normal hover" href="/listings">Explore</a>
-        <a class="nav-link fs-5 fst-normal hover" href="/listings/new">Apnahotel your home</a>
+  <nav class="navbar" role="navigation" aria-label="Primary Navigation">
+    <!-- Left: Airbnb logo -->
+    <div class="logo" tabindex="0" aria-label="Airbnb logo, go to homepage">
+      <a href="/listings">Apnahotel</a>
+    </div>
+    <div class="barger-menu">
+      <i class="fa-solid fa-bars b-menu"></i>
+     </div>
+    <!-- Center: Search bar -->
+     <div class="barger-options">
+      <div class="search-bar" role="search" tabindex="0" aria-label="Search Airbnb">
+        <div class="search-section" aria-label="Location selection" role="button" tabindex="0">
+          <span>Anywhere</span>
+          <small>Add guests</small>
+        </div>
+        <div class="search-section" aria-label="Check-in and Check-out dates" role="button" tabindex="0">
+          <span>Any week</span>
+        </div>
+        <div class="search-section" aria-label="Guests" role="button" tabindex="0">
+          <span>Guests</span>
+          <small>Add guests</small>
+        </div>
+        <div class="search-icon" aria-hidden="true" title="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
       </div>
-      <div class="navbar-nav ms-auto">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2 input" name="search" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-info" type="submit">Search<i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-      </div>
-      <div class="navbar-nav ms-auto btn-group dropstart">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <!-- Right: User menu -->
+      <div class="menu" role="menu" aria-label="User menu">
+        <button class="user-menu add">
+          <a href="/listings/new">Add home</a>
+        </button>
+        <button aria-label="Change language" title="Change language">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+        </button>
           <% if(!currUser){%>
-            <i class="fa-solid fa-circle-user fs-2"></i>
+            <button class="user-btn" aria-label="User account menu" title="User account menu" tabindex="0">
+              <span>Account</span>
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a9 9 0 0 1 13 0"></path></svg>
+            </button>
+            <div class="no-user">
+              <a  href="/signup"><b>Sign up</b></a><br>
+              <a  href="/login"><b>log in</b></a>
+            </div>
           <%}%>
           <% if(currUser){%>
-            <b class="user-info"><%=currUser.username[0].toUpperCase()%></b>
+            <div class="user-btn" id="user-bbtn">
+              <i class="fa-solid fa-circle-user fs-2"></i>
+              <b class="user-info"><%=currUser.username[0].toUpperCase()%></b>
+            </div>
+            <div class="no-user">
+              <p class="nav-link">Hi,<%=currUser.username%></p>
+              <a class="nav-link fs-6 fst-normal hover" href="/logout"><b>log out</b></a>
+              <a class="nav-link fs-6 fst-normal hover" href="#"><b>help</b></a>
+            </div>
+            
           <%}%>
-        </button>
-        <ul class="dropdown-menu">
-          <div class="admin m-2">
-            <% if(!currUser){%>
-              <li><a class="nav-link fs-6 fst-normal hover" href="/signup"><b>Sign up</b></a></li>
-              <li><a class="nav-link fs-6 fst-normal hover" href="/login"><b>log in</b></a></li>
-              <%}%>
-              <% if(currUser){%>
-                <p class="nav-link">Hi,<%=currUser.username%><br><%=currUser.email%></p>
-                <hr>
-              <li><a class="nav-link fs-6 fst-normal hover" href="/logout"><b>log out</b></a></li>
-              <li><a class="nav-link fs-6 fst-normal hover" href="#"><b>help</b></a></li>
-              <%}%>
-          </div>
-      </ul>
+        
       </div>
-    </div>
-  </div>
-</nav>
+     </div>
+  </nav>
 
+<script>
+  let userBtn = document.querySelector(".user-btn");
+   
+  userBtn.addEventListener("click", ()=>{
+    let userbox= document.querySelector(".no-user");
+    userbox.classList.toggle("no-userrr")
+  })
+
+  let bargerbtn = document.querySelector(".b-menu");
+  bargerbtn.addEventListener("click",()=>{
+    let bargerOption = document.querySelector(".barger-options");
+    bargerOption.classList.toggle("barger-op")
+  })
+</script>

@@ -28,6 +28,7 @@ async function main() {
   await mongoose.connect(dbURL);
 }
 
+app.use(express.static('public'));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
@@ -78,6 +79,10 @@ app.use((req,res,next)=>{
 app.listen(8080, () => {
   console.log("app listeing, 8080");
 });
+
+app.get('/', (req, res) => {
+  res.send("WELCOME TO APNA HOTEL :)");
+})
 
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);

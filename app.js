@@ -81,9 +81,10 @@ app.listen(8080, () => {
 });
 
 app.get("/",(req,res)=>{
-  res.send(`/listings ${listingsRouter}`)
-}) 
-//app.use("/listings", listingsRouter);
+  res.send(home)
+});
+
+let home = app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 

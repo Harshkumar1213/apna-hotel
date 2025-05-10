@@ -2,7 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     /* font-family: 'Helvetica Neue', Arial, sans-serif !important; */
 }
 
@@ -71,6 +71,9 @@ body{
   }
 
 /* footer */
+footer{
+  margin-top: 10rem !important;
+}
 .border-top{
     background-color: #f8f6f6;
 }
@@ -103,6 +106,12 @@ body{
 
 .f-info-links a:hover{
     text-decoration: underline;
+}
+
+@media (max-width: 430px) {
+  footer{
+    margin-top: calc(100px-100vh);
+  }
 }
 
 /* listing-card */

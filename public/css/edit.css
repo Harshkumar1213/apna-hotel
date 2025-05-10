@@ -1,0 +1,11 @@
+.e-img img{
+        width: 250px !important;
+        height: 150px !important;
+} 
+ 
+ @media (max-width: 430px) {
+    .e-img img{
+        width: 100px !important;
+        height: 80px !important;
+    }
+ }

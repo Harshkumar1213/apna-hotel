@@ -48,9 +48,9 @@
               <b class="user-info"><%=currUser.username[0].toUpperCase()%></b>
             </div>
             <div class="no-user">
-              <p class="nav-link">Hi,<%=currUser.username%></p>
-              <a class="nav-link fs-6 fst-normal hover" href="/logout"><b>log out</b></a>
-              <a class="nav-link fs-6 fst-normal hover" href="#"><b>help</b></a>
+              <p class="nav-link">Hi,<%=currUser.username%><br><%=currUser.email%></p>
+              <a class="nav-link l-btn" href="/logout"><b>log out</b></a>
+              <a class="nav-link l-btn" href="#"><b>help</b></a>
             </div>
             
           <%}%>

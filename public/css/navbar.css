@@ -1,0 +1,399 @@
+/* Navbar container */
+.navbar {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* Left: Airbnb logo (text) */
+.logo a{
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: rgb(103, 188, 244);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.barger-options{
+ display: flex;
+ justify-content: space-between;
+ gap: 15rem;
+}
+
+ /* Center: Search Bar */
+ .search-bar {
+  flex: 1;
+  max-width: 800px !important;
+  margin: 0 24px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  border: 1.5px solid #ddd;
+  border-radius: 32px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.search-bar:hover,
+.search-bar:focus-within {
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.15);
+  border-color: rgb(103, 188, 244);
+}
+
+.search-section {
+  flex: 1;
+  padding: 14px 24px;
+  border-right: 1px solid #ddd;
+  font-size: 14px;
+  color: #222;
+}
+.search-section:last-child {
+  border-right: none;
+}
+.search-section span {
+  display: block;
+  font-weight: 600;
+  user-select: none;
+}
+.search-section small {
+  display: block;
+  font-weight: 400;
+  color: #717171;
+  font-size: 11px;
+  user-select: none;
+}
+
+.search-icon {
+  background: rgb(103, 188, 244);
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-left: 12px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Right: User and globe menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.add a{
+  text-decoration: none;
+  color: #717171;
+}
+
+.menu button,
+.menu .user-menu {
+  cursor: pointer;
+  border: 1.5px solid #ddd;
+  background: white;
+  border-radius: 21px;
+  color: #717171;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.no-user{
+  position: absolute;
+  top: 80px;
+  right: 1px;
+  background-color: transparent;
+  height: 20vh;
+  width: 10vw;
+  display: none;
+}
+
+.no-userrr{
+  display: block;
+}
+
+ .no-user a{
+  margin-top: 1rem;
+  color: #222222;
+  display: flex;
+  line-height: 0.5rem;
+  text-decoration: none;
+  margin-left: 1rem; 
+}
+
+#user-bbtn{
+  cursor: pointer;
+  border: 1.5px solid #ddd;
+  background: white;
+  border-radius: 21px;
+  color: #717171;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.menu button:hover,
+.menu .user-menu:hover {
+  border-color: #bbbaba;
+  color: #bbbaba;
+  background-color: #eeeded;
+}
+.menu button svg,
+.menu .user-menu svg {
+  width: 20px;
+  height: 20px;
+}
+
+.barger-menu{
+  display: none;
+}
+
+
+ /* Hide text on smaller screen for user menu */
+ .user-menu span {
+  white-space: nowrap;
+}
+/* Responsive styles */
+@media (max-width: 1280px) {
+  .search-bar {
+    max-width: 500px;
+    margin: 0 16px;
+  }
+ 
+  .menu button,
+  .menu .user-menu {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+ 
+  .barger-options{
+    gap: 5.5rem;
+  }
+
+  .menu button,
+  .menu .user-menu {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 925px) {
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+ 
+  .barger-options{
+    gap: 1.5rem;
+  }
+
+  .search-bar{
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 870px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .search-bar {
+    height: 50px;
+    margin: 0 12px;
+  }
+  .search-section {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+  .menu button,
+  .menu .user-menu {
+    padding: 5px 10px;
+    font-size: 13px;
+    gap: 6px;
+  }
+  .user-menu span {
+    display: none;
+  }
+}
+
+/* @media (max-width: 780px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .logo a{
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  } */
+
+
+@media (max-width: 480px) {
+  /* Mobile: Stack search sections vertically */
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .barger-menu{
+    display: block;
+  }
+
+  .barger-menu i{
+    font-size: 1.5rem;
+  }
+
+  .barger-options{
+    position: absolute;
+    top: 4.1rem;
+    background-color: transparent;
+    height: 6.5rem;
+    width: 25rem;
+    display: none;
+  }
+
+  .barger-op{
+    display: block;
+  }
+
+  .search-bar {
+    width: 80%;
+    display: flex;
+    margin: 2px 0 !important;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 24px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+  }
+
+  .search-section {
+    flex: 1 1 100%;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px !important;
+  }
+  .search-section:last-child {
+    border-bottom: none;
+  }
+  .search-icon {
+    width: 36px;
+    height: 36px;
+    margin: 12px auto 12px auto;
+    border-radius: 50%;
+  }
+  .menu {
+    flex-basis: 100%;
+    margin-top: 0.7rem;
+    justify-content: flex-start;
+  }
+
+  .no-user{
+    position: absolute;
+    top: 7rem;
+    right: 1rem;
+    height: 8rem;
+    width: 15rem;
+    background-color: #f8f6f6;
+    border-radius: 15px;
+  }
+
+  .no-user .nav-link{
+    margin: 0.5rem;
+    display: flex;
+    gap: 5px;
+  }
+
+  .no-user .l-btn{
+    margin: 1rem 0.3rem;
+  }
+
+  .menu button,
+    .menu .user-menu {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+    /* Keep user menu icon visible with no text */
+    .user-menu span {
+      display: none;
+    }
+
+  /* .filters{
+    
+  } */
+    
+  }
+
+  @media (max-width: 380px) {
+    .logo {
+      font-size: 1.4rem;
+    }
+
+    .barger-options{
+    position: absolute;
+    top: 4.1rem;
+    background-color: transparent;
+    height: 6.5rem;
+    width: 20rem;
+  }
+
+    .search-section {
+      font-size: 13px !important;
+      padding: 8px 12px ;
+    }
+
+    .no-user{
+    position: absolute;
+    top: 7rem;
+    right: 0.5rem;
+    height: 8rem;
+    width: 15rem;
+    background-color: #f8f6f6;
+    border-radius: 15px;
+  }
+
+  .no-user .nav-link{
+    font-size: 3.2vmin;
+  }
+    .menu button,
+    .menu .user-menu {
+      padding: 5px 8px;
+      font-size: 13px;
+    }
+  }

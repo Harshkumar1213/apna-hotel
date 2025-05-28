@@ -1,0 +1,43 @@
+<%layout("/layouts/boilerplate")%>
+    <div class="listings-grid mt-2">
+    <%if(newListing.length > 0 ){%>
+    <%for(let data of newListing) {%>
+      <a class="data-links" href="/listings/<%=data.id%>">
+      <div class="listing-card" role="article" tabindex="0" aria-label="Cozy studio in downtown New York">
+        <img class="listing-image" src="<%=data.image.url%>" alt="Cozy studio apartment" />
+        <div class="listing-content">
+          <div class="listing-location"><%=data.location%>,<%=data.country%></div>
+          <h2 class="listing-title"><%=data.title%></h2>
+          <div class="listing-footer">
+            <div class="listing-price"><b>&#8377; <%=data.price%></b>/night &nbsp; <i class="tax-info">+18%GST</i></div>
+            <div class="listing-rating" aria-label="4.8 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              4.8
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <%}%>
+    <%} else {%>
+        <div class="err">
+          <p>No Listings Exist!</p>
+        </div>
+        <%}%>
+  </div>
+
+  <style>
+    .err{
+        margin-top: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 85vw !important;
+        background-color: rgb(247, 133, 133);
+        text-align: center;
+    }
+
+    .err p{
+        font-size: 1.5rem;
+    }
+  </style>

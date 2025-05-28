@@ -9,8 +9,7 @@
       <%if(currUser && currUser._id.equals(listing.owner._id)){%>
       <div class="btns mt-2">
         <a class="btn btn-info mb-2" href="/listings/<%=listing.id%>/edit"
-          >Edit</a
-        >
+          >Edit</a>
         <form method="post" action="/listings/<%=listing.id%>/?_method=delete">
           <button class="btn btn-danger">Delete</button>
         </form>
@@ -62,6 +61,7 @@
         <!-- Existing reviews -->
          <%for(review of listing.reviews){%>
         <li>
+          <h2>All Reviews</h2>
           <div class="review-header">
             <span class="review-author">@<%=review.author.username%></span>
             <span class="review-rating" aria-label="4 stars">

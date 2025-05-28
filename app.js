@@ -19,6 +19,8 @@ const passport = require("passport");
 const localStrategy = require("passport-local");
 const User = require("./models/user.js");
 const dbURL = process.env.ATLAS_URL;
+const Listing = require("./models/listing");
+
 
 main()
   .then((res) => console.log("connection Database"))
@@ -76,12 +78,19 @@ app.use((req,res,next)=>{
   next()
 });
 
+
 app.listen(8080, () => {
   console.log("app listeing, 8080");
 });
 
-app.get("/",listingsRouter);
+app.post("/search",async (req, res) => {
+  let data = req.body.inputData;
+  const newListing = await Listing.find({ $or: 
+    [{ location:  data  },{ country: data }] });
+  res.render("listing/search.ejs",{newListing});
+});
 
+app.get("/",listingsRouter);
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
@@ -96,4 +105,3 @@ app.use((err, req, res, next) => {
   let { status = 500, message = "Some Error Occured" } = err;
   res.status(status).render("error.ejs", { message });
 });
-
